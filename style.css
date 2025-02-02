@@ -1,81 +1,43 @@
-#child01{
-    color: brown;
-}
-
-/* General Styling */
-body {
-    font-family: Arial, sans-serif;
-    background-color: #f4f4f4;
-    margin: 0;
-    padding: 0;
-}
-
-/* Container */
-.container {
-    max-width: 800px;
-    margin: auto;
-    background: white;
-    padding: 20px;
-    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
-    border-radius: 10px;
-}
-
-/* Header */
 .header {
-    background-color: #007bff;
-    color: white;
-    padding: 10px;
-    text-align: center;
-    border-radius: 5px;
+    display: flex;
+    justify-content: space-between; /* Pushes logo to left and nav to right */
+    align-items: center; /* Aligns vertically */
+    padding: 10px 20px; /* Adds spacing */
+    background-color: #f8f9fa; /* Optional: Background color */
 }
 
-/* Card Styling */
-.card {
-    background: white;
-    border: 1px solid #ddd;
-    padding: 15px;
-    margin: 10px;
-    text-align: center;
-    border-radius: 8px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+.logo-head img {
+    height: 75px; /* Adjust as needed */
 }
 
-.card img {
-    max-width: 100%;
-    border-radius: 5px;
+.nav-bar {
+    display: flex;
+     gap: 20px; /*Adds space between navbar items */
 }
 
-.card button {
-    background: #007bff;
-    color: white;
-    border: none;
-    padding: 8px 12px;
-    margin-top: 10px;
+.nav-bar div {
     cursor: pointer;
+    font-weight: bold;
+}
+
+.res-container{
+
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    
+}
+
+.card-body{
+    width: 250px;
+    height: 400px;
+    border-color: green;
     border-radius: 5px;
 }
 
-.card button:hover {
-    background: #0056b3;
+.res-image{
+    width: 200px;
+    height: 250px;
 }
 
-/* Body */
-.body {
-    text-align: center;
-    margin-top: 20px;
-}
 
-.body img {
-    max-width: 100%;
-    margin: 10px 0;
-}
-
-/* Footer */
-.footer {
-    background: #333;
-    color: white;
-    text-align: center;
-    padding: 10px;
-    margin-top: 20px;
-    border-radius: 5px;
-}
