@@ -6,7 +6,7 @@
   "scripts": {
     "test": "jest",
     "start": "parcel index.html",
-    "build":"parcel build index.html"
+    "build": "parcel build index.html"
   },
   "repository": {
     "type": "git",
@@ -33,6 +33,7 @@
     "process": "^0.11.10"
   },
   "dependencies": {
+    "namaste_react": "file:",
     "react": "^19.0.0",
     "react-dom": "^19.0.0"
   }
