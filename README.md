@@ -96,7 +96,26 @@ npx (Executing A Packages)
 
 *Functional Component
  - So this is Basically a Normal JS Function (Generally a Arrow Function)
-  
+
+ - Expoert 
+
+ Two Typed
+ Default Export 
+ - (When we have only one Component in the Page/file)
+  -export default Component_Name
+ Nmaed Export
+  -(When we have More than one Compoenet )
+   - export Const Component="Abc
+
+   Import is same we just have to write a ({} for the Named Import)
+
+
+USESTATE
+
+- When we want click button and change in DOM (Change in Data Automatically )
+ so we use a UseState 
+
+ const [variable,setvariable]=useState([data])
 
 
 
