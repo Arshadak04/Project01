@@ -1,6 +1,10 @@
 import logo from "./../../images/MasterChef.png";
+import { useState } from "react";
 
 const Header = () => {
+    // let test="Login";
+    const [logButton, setlogButton]=useState("LOGIN")
+
     return (
         <div className="header">
             <div className="logo-head">
@@ -13,6 +17,14 @@ const Header = () => {
                 <div>About Us</div>
                 <div>Contact</div>
                 <div>More...</div>
+                <button onClick={
+                    ()=>{
+                        
+                        logButton==="LOGIN"?setlogButton("LOGOUT"):setlogButton("LOGIN")
+                        
+
+                    }
+                }>{logButton}</button>
             </div>
         </div>
     );
