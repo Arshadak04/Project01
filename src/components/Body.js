@@ -70,7 +70,7 @@ const Body =()=>{
                         return res.info.avgRating >= 4.2
                       }) 
                       
-                      setRestaurent01(FilterRestaurant01)
+                      setFilteredRestaurent(FilterRestaurant01)
 
                   console.log(FilterRestaurant01)
                 }}
