@@ -1,5 +1,6 @@
 import logo from "./../../images/MasterChef.png";
 import { useState } from "react";
+import { Link } from "react-router";
 
 const Header = () => {
     // let test="Login";
@@ -13,9 +14,9 @@ const Header = () => {
 
             </div>
             <div className="nav-bar">
-                <div>Home</div>
-                <div>About Us</div>
-                <div>Contact</div>
+                <div><Link to={"/"}>Home</Link></div>
+                <div><Link to={"/about-us"}>About Us</Link></div>
+                <div><Link to={"/contact-us"}>Contact Us</Link></div>
                 <div>More...</div>
                 <button onClick={
                     ()=>{

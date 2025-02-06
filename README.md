@@ -117,6 +117,12 @@ USESTATE
 
  const [variable,setvariable]=useState([data])
 
+ USEEFFECT
+
+ - IN general IN react 
+
+   
+
 
 
 
