@@ -1,6 +1,5 @@
 # 📌 Project Name
 
-<!-- ![Project Screenshot](https://via.placeholder.com/800x400)   -->
 *This FullStack Application Starting of a Restaurent.*
 
 ---
@@ -121,7 +120,13 @@ USESTATE
 
  - IN general IN react 
 
-   
+  Implementation of code in chuks we called it 
+
+  -Chunking
+  -Code splitting
+  -Dynamic Bundling
+  -on demand loading
+  -dynamic import
 
 
 
