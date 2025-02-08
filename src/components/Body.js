@@ -4,6 +4,7 @@ import { useState } from "react";
 import { useEffect } from "react";
 import ShimmerUi from "./ShimmerUi";
 import { Link } from "react-router";
+import useOnlineStatus from "../custom_hooks/useOnlineStatus";
 
 const Body =()=>{
 
@@ -18,6 +19,14 @@ const Body =()=>{
 
      const [ResSearch, SetResSearch]=useState([""])
     
+    // const [isOnline]=useOnlineStatus();
+
+    // if (!isOnline) {
+    //   return (
+    //     <h1>User is Offline</h1>
+    //   );
+    // }
+  
 
      useEffect(()=>{
        getData()
@@ -39,8 +48,14 @@ const Body =()=>{
     //  if(Restaurant01.length===0){
     //     return 
     //  }
+    
+    
+//      const onlineInfo=useOnlineStatus();
 
-     
+const OnlineStatus=useOnlineStatus();
+
+if(OnlineStatus===false) return <h1> Please Check Your Internate Connection</h1>
+
     
     return Restaurant01.length===0?<ShimmerUi/>: (
         <div className="body">
