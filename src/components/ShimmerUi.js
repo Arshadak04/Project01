@@ -1,19 +1,13 @@
-import ShimmerCard from "./ShimmerCard"
+import ShimmerCard from "./ShimmerCard";
 
-const ShimmerUi=()=>{
+const ShimmerUi = () => {
     return (
-<div className="shimmer-container">
-
-
-    <div className="shimmer-container">
-      {[...Array(10)].map((_, index) => (
-        <ShimmerCard key={index} />
-      ))}
-    </div>
-   
-
-    </div>
-    )
-}
+        <div className="flex flex-wrap justify-center gap-4 p-4">
+            {[...Array(10)].map((_, index) => (
+                <ShimmerCard key={index} />
+            ))}
+        </div>
+    );
+};
 
 export default ShimmerUi;
