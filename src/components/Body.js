@@ -1,10 +1,11 @@
-import ResCard from "./ResCard";
+import ResCard , {OpenResCard} from "./ResCard";
 import Restaurants from "../common/data";
 import { useState } from "react";
 import { useEffect } from "react";
 import ShimmerUi from "./ShimmerUi";
 import { Link } from "react-router";
 import useOnlineStatus from "../custom_hooks/useOnlineStatus";
+
 
 const Body = () => {
     const [Restaurant01, setRestaurent01] = useState([]);
@@ -14,6 +15,8 @@ const Body = () => {
     useEffect(() => {
         getData();
     }, []);
+
+    const RestaurantCardPromoted = OpenResCard(ResCard);  //Higher Order Component
 
     const getData = async () => {
         const data = await fetch(
@@ -76,7 +79,8 @@ const Body = () => {
             <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 mt-6">
                 {FilteredRestaurent.map((restaurant) => (
                     <Link key={restaurant.info.id} to={"/restaurents/" + restaurant.info.id} className="hover:scale-105 transition">
-                        <ResCard resList={restaurant} />
+                      {restaurant.info.isOpen?<RestaurantCardPromoted resList={restaurant}/>:<ResCard resList={restaurant} />}
+                        
                     </Link>
                 ))}
             </div>

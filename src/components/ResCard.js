@@ -30,6 +30,17 @@ const ResCard = (props) => {
     );
 };
 
+ export const OpenResCard=(ResCard)=>{
+  return(props)=>{
+    return(
+      <div>
+        <label className="absolute bg-black text-cyan-50 mx-4 px-4 py-2 rounded-md">Open</label>
+        <ResCard {...props}/>
+      </div>
+    )
+  }
+}
+
 export default ResCard;
 
 
