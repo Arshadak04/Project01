@@ -1,16 +1,17 @@
-import { useState } from "react";
+// import { useState } from "react";
 import RestaurentMenuPartItem from "./RestaurentMenuPartItem";
 
 
-const RestaurentMenuPart=({data}) =>{
+const RestaurentMenuPart=({data,accod,setshowindex}) =>{
 
-  const [accod, setAccod] = useState(false);
+  // const [accod, setAccod] = useState(false);
 
     const HandleClick=()=>{
 
        console.log("Hello Button Clicked")
       // setAccod(!accod);
-      setAccod(!accod);
+      // setAccod(!accod);
+      setshowindex();
 
 
     };

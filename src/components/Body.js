@@ -1,16 +1,23 @@
 import ResCard , {OpenResCard} from "./ResCard";
 import Restaurants from "../common/data";
-import { useState } from "react";
+import { useState ,useContext } from "react";
 import { useEffect } from "react";
 import ShimmerUi from "./ShimmerUi";
 import { Link } from "react-router";
 import useOnlineStatus from "../custom_hooks/useOnlineStatus";
+import UserContext from "../context/UserContext";
+
+
 
 
 const Body = () => {
     const [Restaurant01, setRestaurent01] = useState([]);
     const [FilteredRestaurent, setFilteredRestaurent] = useState([]);
     const [ResSearch, SetResSearch] = useState([""]);
+
+    // const loggedInUser=useContext(UserContext);
+    // console.log(loggedInUser)
+    
 
     useEffect(() => {
         getData();
@@ -29,6 +36,8 @@ const Body = () => {
         setRestaurent01(json?.data?.cards[4]?.card?.card?.gridElements?.infoWithStyle?.restaurants);
         setFilteredRestaurent(json?.data?.cards[4]?.card?.card?.gridElements?.infoWithStyle?.restaurants);
     };
+
+     const {loggedInUser ,setuserName} =useContext(UserContext)
 
     const OnlineStatus = useOnlineStatus();
 
@@ -74,7 +83,17 @@ const Body = () => {
                 >
                     Top Restaurant
                 </button>
+             
+
+                <div>
+                <label>User Name: </label>
+                <input className="border border-b-stone-950 p-2 m-2 " value={loggedInUser} onChange={(e)=>setuserName(e.target.value)}></input>
             </div>
+
+
+            </div>
+
+
 
             <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 mt-6">
                 {FilteredRestaurent.map((restaurant) => (

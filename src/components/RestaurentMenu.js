@@ -2,8 +2,11 @@ import ShimmerUi from "./ShimmerUi";
 import { useParams } from "react-router";
 import useRestaurentInfo from "../custom_hooks/useRestaurentInfo";
 import RestaurentMenuPart from "./RestaurentMenuPart";
+import { useState } from "react";
 
 const RestaurentMenu = () => {
+
+  const [showindex,setshowindex]=useState(0)
     const newid = useParams();
     console.log(newid.resid);
 
@@ -49,8 +52,8 @@ return (
       <h1 className="text-3xl font-bold text-gray-800">{name}</h1>
       <p className="text-gray-600 text-lg mt-2">{costForTwoMessage}</p>
 
-      {categoryfil.map((category) => (
-        <RestaurentMenuPart key={category.card.card.categoryId} data={category} />
+      {categoryfil.map((category,index) => (
+        <RestaurentMenuPart key={category.card.card.categoryId} data={category} accod={index===showindex && true} setshowindex={()=> setshowindex(index)} />
       ))}
     </div>
   );

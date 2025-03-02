@@ -10,17 +10,32 @@ import RestaurentMenu from "./components/RestaurentMenu";
 // import { createBrowserRouter , RouterProvider } from "react-router-dom";
 import { createBrowserRouter, RouterProvider, Outlet } from "react-router";
 import { lazy, Suspense } from "react";
+import { useState,useEffect } from "react";
+import UserContext from "./context/UserContext";
 
 const AboutUs = lazy(() => import("./components/AboutUs"));
 
 const AppLayout = () => {
+
+    const [userName,setuserName]=useState()
+
+    useEffect(()=>{
+        const data={
+            name:"Arshad Qureshi"
+        }
+            
+       setuserName(data.name) 
+    },[])
     return (
         <div className="main-container flex flex-col min-h-screen">
+            <UserContext.Provider value={{loggedInUser: userName , setuserName}}>
             <Header />
             <div className="flex-grow">
                 <Outlet />
             </div>
             <Footer />
+            </UserContext.Provider>
+           
         </div>
     );
 };

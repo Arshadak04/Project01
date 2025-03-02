@@ -1,11 +1,15 @@
 import logo from "./../../images/MasterChef.png";
-import { useState } from "react";
+import { useState ,useContext} from "react";
 import { Link } from "react-router";
 import useOnlineStatus from "../custom_hooks/useOnlineStatus";
+import UserContext from "../context/UserContext";
 
 const Header = () => {
     const OnlineStatus = useOnlineStatus();
     const [logButton, setLogButton] = useState("LOGIN");
+
+    const {loggedInUser}=useContext(UserContext);
+    // console.log(loggedInUser)
 
     return (
         <header className="flex justify-between items-center bg-white shadow-md px-6 py-4">
@@ -35,6 +39,8 @@ const Header = () => {
                 >
                     {logButton}
                 </button>
+
+                <div>{loggedInUser}</div>
             </nav>
         </header>
     );
